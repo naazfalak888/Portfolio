@@ -9,6 +9,12 @@
   scroll-behavior: smooth;
 }
 
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
@@ -18,7 +24,9 @@ body {
 
 .app {
   min-height: 100vh;
+  width: 100%;
   overflow-x: hidden;
+
   background:
     radial-gradient(
       circle at 50% 0%,
@@ -40,11 +48,14 @@ body {
 
 .navbar {
   position: fixed;
+
   top: 18px;
   left: 50%;
+
   transform: translateX(-50%);
 
   width: min(92%, 1000px);
+
   padding: 16px 24px;
 
   display: flex;
@@ -57,11 +68,13 @@ body {
   -webkit-backdrop-filter: blur(18px);
 
   border: 1px solid rgba(224, 141, 167, 0.3);
+
   border-radius: 18px;
 
   z-index: 1000;
 
-  box-shadow: 0 10px 40px rgba(190, 110, 135, 0.12);
+  box-shadow:
+    0 10px 40px rgba(190, 110, 135, 0.12);
 }
 
 
@@ -74,6 +87,7 @@ body {
   font-weight: 800;
 
   color: #b83f67 !important;
+
   background: none !important;
   background-image: none !important;
 
@@ -81,6 +95,8 @@ body {
   background-clip: initial !important;
 
   -webkit-text-fill-color: #b83f67 !important;
+
+  flex-shrink: 0;
 }
 
 
@@ -90,6 +106,9 @@ body {
 
 .nav-links {
   display: flex;
+
+  align-items: center;
+
   gap: 28px;
 }
 
@@ -101,22 +120,31 @@ body {
   text-decoration: none;
 
   font-size: 0.95rem;
+
   font-weight: 600;
 
-  transition: 0.3s ease;
+  transition:
+    color 0.3s ease,
+    text-shadow 0.3s ease;
+
+  /* Remove blue mobile browser highlight */
+  -webkit-tap-highlight-color: transparent;
+
+  outline: none;
 }
 
 .nav-links a::after {
   content: "";
 
   position: absolute;
+
   left: 0;
   bottom: -6px;
 
   width: 0;
   height: 2px;
 
-  background: #d97898;
+  background: #b83f67;
 
   border-radius: 10px;
 
@@ -124,13 +152,62 @@ body {
 }
 
 .nav-links a:hover {
-  color: #6f2744;
+  color: #b83f67;
 
-  text-shadow: 0 0 15px rgba(201, 95, 127, 0.35);
+  text-shadow:
+    0 0 15px rgba(184, 63, 103, 0.25);
 }
 
 .nav-links a:hover::after {
   width: 100%;
+}
+
+/* Mobile tap/focus */
+.nav-links a:focus,
+.nav-links a:active {
+  color: #b83f67;
+
+  outline: none;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+.nav-links a:focus::after,
+.nav-links a:active::after {
+  width: 100%;
+}
+
+
+/* =====================================================
+   MOBILE MENU BUTTON
+   ===================================================== */
+
+.menu-toggle {
+  display: none;
+
+  border: none;
+
+  background: transparent;
+
+  color: #b83f67;
+
+  font-size: 1.7rem;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  padding: 5px;
+
+  transition: 0.2s ease;
+}
+
+.menu-toggle:hover {
+  color: #8f2f51;
+
+  transform: scale(1.05);
 }
 
 
@@ -140,6 +217,7 @@ body {
 
 .hero {
   position: relative;
+
   overflow: hidden;
 
   min-height: 90vh;
@@ -147,6 +225,7 @@ body {
   padding: 170px 20px 100px;
 
   display: flex;
+
   justify-content: center;
   align-items: center;
 
@@ -154,6 +233,8 @@ body {
 }
 
 .hero-content {
+  width: 100%;
+
   max-width: 850px;
 
   animation: heroFadeIn 0.8s ease both;
@@ -162,7 +243,7 @@ body {
 
 /* =====================================================
    SMALL TEXT — HELLO, I'M
-   EXACT SAME SOLID COLOUR
+   SAME SOLID COLOUR
    ===================================================== */
 
 .small-text {
@@ -177,6 +258,7 @@ body {
   -webkit-text-fill-color: #b83f67 !important;
 
   font-size: 0.9rem;
+
   letter-spacing: 4px;
 
   margin-bottom: 18px;
@@ -187,7 +269,7 @@ body {
 
 /* =====================================================
    HERO H1 — FALAK NAAZ
-   EXACT SAME SOLID COLOUR
+   SAME SOLID COLOUR
    ===================================================== */
 
 .hero h1 {
@@ -250,11 +332,13 @@ body {
 @keyframes heroFadeIn {
   from {
     opacity: 0;
+
     transform: translateY(18px);
   }
 
   to {
     opacity: 1;
+
     transform: translateY(0);
   }
 }
@@ -318,6 +402,7 @@ body {
   position: relative;
 
   display: flex;
+
   flex-direction: column;
 
   min-height: 360px;
@@ -342,7 +427,8 @@ body {
 
   overflow: hidden;
 
-  box-shadow: 0 10px 30px rgba(190, 110, 135, 0.08);
+  box-shadow:
+    0 10px 30px rgba(190, 110, 135, 0.08);
 }
 
 .project-card::before {
@@ -443,7 +529,8 @@ body {
 
   color: #fff9fb;
 
-  box-shadow: 0 10px 25px rgba(217, 120, 152, 0.3);
+  box-shadow:
+    0 10px 25px rgba(217, 120, 152, 0.3);
 }
 
 
@@ -501,7 +588,8 @@ body {
 
   font-weight: 700;
 
-  box-shadow: 0 10px 35px rgba(217, 120, 152, 0.25);
+  box-shadow:
+    0 10px 35px rgba(217, 120, 152, 0.25);
 
   transition: 0.3s ease;
 }
@@ -509,7 +597,8 @@ body {
 .contact-link:hover {
   transform: translateY(-4px);
 
-  box-shadow: 0 15px 35px rgba(217, 120, 152, 0.35);
+  box-shadow:
+    0 15px 35px rgba(217, 120, 152, 0.35);
 }
 
 
@@ -522,7 +611,8 @@ footer {
 
   padding: 30px 20px;
 
-  border-top: 1px solid rgba(224, 141, 167, 0.15);
+  border-top:
+    1px solid rgba(224, 141, 167, 0.15);
 
   color: #8a5267;
 
@@ -533,7 +623,7 @@ footer {
 
 
 /* =====================================================
-   PROJECT DETAILS PAGE
+   PROJECT DETAILS
    ===================================================== */
 
 .portfolio-details-page {
@@ -567,6 +657,7 @@ footer {
   position: fixed !important;
 
   top: 20px !important;
+
   left: 20px !important;
 
   z-index: 2000 !important;
@@ -587,7 +678,8 @@ footer {
 
   cursor: pointer !important;
 
-  box-shadow: 0 8px 25px rgba(216, 112, 147, 0.18) !important;
+  box-shadow:
+    0 8px 25px rgba(216, 112, 147, 0.18) !important;
 
   transition: all 0.3s ease !important;
 }
@@ -599,7 +691,8 @@ footer {
 
   border-color: #df7f9f !important;
 
-  box-shadow: 0 10px 30px rgba(216, 112, 147, 0.25) !important;
+  box-shadow:
+    0 10px 30px rgba(216, 112, 147, 0.25) !important;
 
   transform: translateY(-2px) !important;
 }
@@ -619,7 +712,8 @@ footer {
 
   border-radius: 28px;
 
-  box-shadow: 0 25px 70px rgba(190, 110, 135, 0.14);
+  box-shadow:
+    0 25px 70px rgba(190, 110, 135, 0.14);
 }
 
 .details-label {
@@ -643,9 +737,15 @@ footer {
 
   color: #b83f67;
 
-  background: none;
+  background: none !important;
 
-  -webkit-text-fill-color: #b83f67;
+  background-image: none !important;
+
+  -webkit-background-clip: initial !important;
+
+  background-clip: initial !important;
+
+  -webkit-text-fill-color: #b83f67 !important;
 
   font-weight: 900;
 }
@@ -774,10 +874,11 @@ footer {
 
 
 /* =====================================================
-   RESPONSIVE
+   TABLET
    ===================================================== */
 
 @media (max-width: 800px) {
+
   .project-grid {
     grid-template-columns: 1fr;
   }
@@ -786,29 +887,185 @@ footer {
     width: 94%;
   }
 
-  .nav-links {
-    gap: 15px;
-  }
-
   .hero {
     min-height: 80vh;
+
     padding-top: 150px;
   }
 }
 
-@media (max-width: 768px) {
+
+/* =====================================================
+   MOBILE NAVBAR
+   ===================================================== */
+
+@media (max-width: 600px) {
+
   .navbar {
     width: calc(100% - 30px);
 
-    max-width: none;
+    padding: 14px 18px;
 
-    margin: 18px auto 0;
+    flex-wrap: wrap;
+  }
 
-    box-sizing: border-box;
+
+  /* SHOW HAMBURGER */
+
+  .menu-toggle {
+    display: block !important;
+
+    border: none;
+
+    background: transparent;
+
+    color: #b83f67 !important;
+
+    font-size: 1.7rem;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    padding: 5px;
+
+    -webkit-tap-highlight-color: transparent;
+  }
+
+
+  /* HIDE NAV LINKS ON MOBILE */
+
+  .nav-links {
+    display: none !important;
+
+    width: 100%;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding-top: 18px;
+  }
+
+
+  /* SHOW NAV LINKS WHEN MENU IS OPEN */
+
+  .nav-links.active {
+    display: flex !important;
+  }
+
+
+  .nav-links a {
+    font-size: 0.95rem;
+
+    color: #713d53;
+
+    padding: 4px 0;
+
+    -webkit-tap-highlight-color: transparent;
+
+    outline: none;
+  }
+
+  .nav-links a:hover,
+  .nav-links a:focus,
+  .nav-links a:active {
+    color: #b83f67;
+
+    outline: none;
+  }
+
+  .nav-links a:focus::after,
+  .nav-links a:active::after {
+    width: 100%;
+  }
+
+
+  /* HERO */
+
+  .hero {
+    padding: 140px 20px 70px;
+  }
+
+  .hero h1 {
+    font-size: clamp(3rem, 15vw, 5rem);
+
+    letter-spacing: -2px;
+  }
+
+  .hero h2 {
+    font-size: 1.35rem;
+  }
+
+  .hero-description {
+    font-size: 0.95rem;
+  }
+
+
+  /* PROJECTS */
+
+  .projects {
+    padding: 80px 20px;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    min-height: auto;
+
+    padding: 28px;
+  }
+
+
+  /* CONTACT */
+
+  .contact {
+    padding: 100px 20px;
+  }
+
+
+  /* DETAILS */
+
+  .portfolio-details-card {
+    padding: 30px 22px;
+  }
+
+  .back-button {
+    top: 15px !important;
+
+    left: 15px !important;
+
+    padding: 10px 17px !important;
+  }
+}
+
+
+/* =====================================================
+   SMALL PHONES
+   ===================================================== */
+
+@media (max-width: 400px) {
+
+  .navbar {
+    width: calc(100% - 24px);
+
+    padding: 13px 15px;
+  }
+
+  .logo {
+    font-size: 1.15rem;
+  }
+
+  .menu-toggle {
+    font-size: 1.55rem;
   }
 
   .nav-links {
-    gap: 10px;
+    gap: 15px;
   }
 
   .nav-links a {
@@ -816,62 +1073,20 @@ footer {
   }
 
   .hero {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
+    padding-left: 15px;
 
-  .hero-description {
-    font-size: 0.95rem;
-  }
-
-  .project-card {
-    min-height: auto;
-  }
-
-  .contact {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-}
-
-@media (max-width: 600px) {
-  .portfolio-details-card {
-    padding: 30px 22px;
-  }
-
-  .back-button {
-    top: 15px !important;
-    left: 15px !important;
-    padding: 10px 17px !important;
-  }
-}
-
-@media (max-width: 500px) {
-  .navbar {
-    padding: 14px 17px;
-  }
-
-  .logo {
-    font-size: 1.15rem;
-  }
-
-  .nav-links {
-    gap: 12px;
-  }
-
-  .nav-links a {
-    font-size: 0.8rem;
+    padding-right: 15px;
   }
 
   .hero h1 {
-    letter-spacing: -2px;
+    font-size: 2.8rem;
+  }
+
+  .hero h2 {
+    font-size: 1.2rem;
   }
 
   .project-card {
-    padding: 28px;
-  }
-
-  .contact h2 {
-    font-size: 2rem;
+    padding: 24px;
   }
 }

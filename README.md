@@ -1,16 +1,105 @@
-# React + Vite
+# 🌸 Falak Naaz — Personal Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+> A modern, responsive personal portfolio built to showcase my journey, projects, and skills as a future web developer.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ About the Project
 
-## React Compiler
+Welcome to my personal portfolio! 👋
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This website is a small reflection of my journey into web development — a place where I can showcase the projects I've built, the technologies I'm learning, and the skills I'm continuously improving.
 
-## Expanding the Oxlint configuration
+I designed the portfolio with a clean, soft and modern aesthetic while keeping the experience simple, responsive and user-friendly.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+---
+
+## 🚀 Featured Projects
+
+### 🌐 Portfolio Website
+A modern personal portfolio built with React to showcase my work, skills and development journey.
+
+### ✅ Todo App
+A simple and clean application for managing everyday tasks and staying organized.
+
+### ☁️ Weather App
+A weather application that allows users to search for a city and view its current weather conditions.
+
+---
+
+## 🛠️ Built With
+
+- ⚛️ React
+- 🟨 JavaScript
+- 🎨 CSS
+- ⚡ Vite
+- 🧩 React Hooks
+
+---
+
+## 💡 Features
+
+- 📱 Responsive design
+- ✨ Modern and clean UI
+- 🧭 Smooth navigation
+- 🍔 Mobile-friendly navigation menu
+- 💻 Interactive project cards
+- 🌤️ Working Weather App
+- ✅ Working Todo App
+- 📂 Dedicated project details section
+
+---
+
+## 🎯 My Goal
+
+I'm currently learning and improving my web development skills by building real projects and experimenting with new ideas.
+
+This portfolio will continue to evolve as I learn more, build more, and grow as a developer. 🚀
+
+---
+
+## 🌷 A Little About Me
+
+Hi, I'm **Falak Naaz**.
+
+I'm a future web developer who enjoys creating clean, modern and user-friendly websites.
+
+I believe that every project is an opportunity to learn something new — and this portfolio is part of that journey.
+
+---
+
+## 📌 What's Next?
+
+This portfolio is still growing.
+
+Future improvements may include:
+
+- 🎨 More projects
+- ✨ New UI interactions
+- 📱 Further responsive improvements
+- 🚀 More advanced React projects
+- 💡 New ideas and experiments
+
+---
+
+## 🌐 Portfolio
+
+**Visit my portfolio:**  
+[Live Portfolio](YOUR_VERCEL_LINK_HERE)
+
+---
+
+## 📬 Connect With Me
+
+If you'd like to connect or have a project idea, feel free to reach out.
+
+**Telegram:**  
+https://t.me/falaknaaz1234
+
+---
+
+### 💗 Thanks for visiting!
+
+Thanks for taking the time to explore my project.
+
+**Built with curiosity, creativity and lots of learning. 🌸**

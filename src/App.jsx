@@ -1,5 +1,7 @@
 import { useState } from "react";
+
 import "./App.css";
+
 import WeatherApp from "./weather/WeatherApp";
 import TodoApp from "./todo/TodoApp";
 
@@ -8,39 +10,51 @@ function App() {
   const [showTodo, setShowTodo] = useState(false);
   const [showPortfolio, setShowPortfolio] = useState(false);
 
-  // Weather App
+  // Mobile menu state
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  /* =====================================================
+     WEATHER APP
+     ===================================================== */
+
   if (showWeather) {
     return (
       <div>
-       <button
-  className="back-button"
-  onClick={() => setShowWeather(false)}
->
-  ← Back to Portfolio
-</button>
+        <button
+          className="back-button"
+          onClick={() => setShowWeather(false)}
+        >
+          ← Back to Portfolio
+        </button>
 
         <WeatherApp />
       </div>
     );
   }
 
-  // Todo App
+  /* =====================================================
+     TODO APP
+     ===================================================== */
+
   if (showTodo) {
     return (
       <div>
         <button
-  className="back-button"
-  onClick={() => setShowTodo(false)}
->
-  ← Back to Portfolio
-</button>
+          className="back-button"
+          onClick={() => setShowTodo(false)}
+        >
+          ← Back to Portfolio
+        </button>
 
         <TodoApp />
       </div>
     );
   }
 
-  // Portfolio Project Details
+  /* =====================================================
+     PORTFOLIO PROJECT DETAILS
+     ===================================================== */
+
   if (showPortfolio) {
     return (
       <div className="portfolio-details-page">
@@ -96,6 +110,7 @@ function App() {
 
           <div className="details-highlight">
             <span>🚀</span>
+
             <p>
               This portfolio is continuously being improved as I learn
               more about web development.
@@ -106,98 +121,204 @@ function App() {
     );
   }
 
+  /* =====================================================
+     MAIN PORTFOLIO
+     ===================================================== */
+
   return (
     <div className="app">
 
-      {/* Navbar */}
+      {/* =================================================
+          NAVBAR
+          ================================================= */}
+
       <nav className="navbar">
+
+        {/* Logo */}
         <div className="logo">Falak</div>
 
-        <div className="nav-links">
-          <a href="#home">Home</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
+        {/* Mobile Menu Button */}
+        <button
+          className="menu-toggle"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle navigation"
+          aria-expanded={menuOpen}
+        >
+          ☰
+        </button>
+
+        {/* Navigation Links */}
+        <div className={`nav-links ${menuOpen ? "active" : ""}`}>
+
+          <a
+            href="#home"
+            onClick={() => setMenuOpen(false)}
+          >
+            Home
+          </a>
+
+          <a
+            href="#projects"
+            onClick={() => setMenuOpen(false)}
+          >
+            Projects
+          </a>
+
+          <a
+            href="#contact"
+            onClick={() => setMenuOpen(false)}
+          >
+            Contact
+          </a>
+
         </div>
+
       </nav>
 
-      {/* Hero */}
+
+      {/* =================================================
+          HERO
+          ================================================= */}
+
       <section id="home" className="hero">
+
         <div className="hero-content">
-          <p className="small-text">HELLO, I'M</p>
 
-          <h1>Falak Naaz</h1>
+          <p className="small-text">
+            HELLO, I'M
+          </p>
 
-          <h2>Future Web Developer 🚀</h2>
+          <h1>
+            Falak Naaz
+          </h1>
+
+          <h2>
+            Future Web Developer 🚀
+          </h2>
 
           <p className="hero-description">
             I create clean, modern and user-friendly websites while
             continuously learning and improving my skills.
           </p>
+
         </div>
+
       </section>
 
-      {/* Projects */}
+
+      {/* =================================================
+          PROJECTS
+          ================================================= */}
+
       <section id="projects" className="projects">
+
         <div className="section-heading">
-          <p>MY WORK</p>
-          <h2>Featured Projects</h2>
+
+          <p>
+            MY WORK
+          </p>
+
+          <h2>
+            Featured Projects
+          </h2>
+
         </div>
+
 
         <div className="project-grid">
 
-          {/* Portfolio */}
-          <div className="project-card">
-            <span>01</span>
+          {/* Portfolio Project */}
 
-            <h3>Portfolio Website</h3>
+          <div className="project-card">
+
+            <span>
+              01
+            </span>
+
+            <h3>
+              Portfolio Website
+            </h3>
 
             <p>
               A modern and responsive personal portfolio built with React.
             </p>
 
-            <button onClick={() => setShowPortfolio(true)}>
+            <button
+              onClick={() => setShowPortfolio(true)}
+            >
               View Project ↗
             </button>
+
           </div>
 
-          {/* Todo */}
-          <div className="project-card">
-            <span>02</span>
 
-            <h3>Todo App</h3>
+          {/* Todo Project */}
+
+          <div className="project-card">
+
+            <span>
+              02
+            </span>
+
+            <h3>
+              Todo App
+            </h3>
 
             <p>
               A simple and clean todo application for managing daily tasks.
             </p>
 
-            <button onClick={() => setShowTodo(true)}>
+            <button
+              onClick={() => setShowTodo(true)}
+            >
               View Project ↗
             </button>
+
           </div>
 
-          {/* Weather */}
-          <div className="project-card">
-            <span>03</span>
 
-            <h3>Weather App</h3>
+          {/* Weather Project */}
+
+          <div className="project-card">
+
+            <span>
+              03
+            </span>
+
+            <h3>
+              Weather App
+            </h3>
 
             <p>
               Search any city and check its current weather conditions.
             </p>
 
-            <button onClick={() => setShowWeather(true)}>
+            <button
+              onClick={() => setShowWeather(true)}
+            >
               View Project ↗
             </button>
+
           </div>
 
         </div>
+
       </section>
 
-      {/* Contact */}
-      <section id="contact" className="contact">
-        <p>LET'S CONNECT</p>
 
-        <h2>Have a project in mind?</h2>
+      {/* =================================================
+          CONTACT
+          ================================================= */}
+
+      <section id="contact" className="contact">
+
+        <p>
+          LET'S CONNECT
+        </p>
+
+        <h2>
+          Have a project in mind?
+        </h2>
 
         <a
           href="https://t.me/falaknaaz1234"
@@ -207,11 +328,20 @@ function App() {
         >
           Contact Me ↗
         </a>
+
       </section>
 
-      {/* Footer */}
+
+      {/* =================================================
+          FOOTER
+          ================================================= */}
+
       <footer>
-        <p>© 2026 Falak Naaz. All rights reserved.</p>
+
+        <p>
+          © 2026 Falak Naaz. All rights reserved.
+        </p>
+
       </footer>
 
     </div>
